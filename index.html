@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kumbh+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      padding: 4rem;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="app-header container">
+    <div>
+      <div class="mbl-only">
+        <button class="glass" onclick="aside_menu.showModal()"><img src="./images/icon-menu.svg" alt="menu"></button>
+
+
+        <dialog id="aside_menu">
+          <div>
+            <button class="glass" onclick="aside_menu.close()"><img src="./images/icon-close.svg"
+                alt="close menu"></button>
+            <aside>
+              <menu>
+                <li>Collections</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>About</li>
+                <li>Contact</li>
+              </menu>
+            </aside>
+          </div>
+        </dialog>
+
+
+      </div>
+      <div class="header-item"><img src="./images/logo.svg" alt="logo"></div>
+      <nav class="dsk-only">
+        <menu>
+          <li class="header-item">Collections</li>
+          <li class="header-item">Men</li>
+          <li class="header-item">Women</li>
+          <li class="header-item">About</li>
+          <li class="header-item">Contact</li>
+        </menu>
+      </nav>
+    </div>
+    <div>
+      <button class="glass" onclick="cart.classList.toggle('open')"><img src="./images/icon-cart.svg"
+          alt="cart"></button>
+      <button class="glass"><img src="./images/image-avatar.png" alt="" width="48"></button>
+    </div>
+  </header>
+  <div class="container" id="cart-container">
+    <div id="cart">
+      <header class="cart-header">
+        <h3>Cart</h3>
+      </header>
+      <article class="cart-article">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="product 1" width="50" height="50">
+        <p>
+          <span>Fall Limited Edition Sneakers</span>
+          <span>$125.00 x3 <strong>$375.00</strong></span>
+        </p>
+        <button class="glass"><img src="./images/icon-delete.svg" alt="delete"></button>
+      </article>
+      <footer class="cart-footer">
+        <button class="primary">Checkout</button>
+      </footer>
+    </div>
+  </div>
+  <main class="container">
+    <section class="product-preview">
+      <div class="highlight" data-type="default">
+        <div class="controls mbl-only">
+          <button class="round-white" onclick="previous(highlight)"><img src="./images/icon-previous.svg"
+              alt=""></button>
+          <button class="round-white" onclick="next(highlight)"><img src="./images/icon-next.svg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery dsk-only">
+        <ul>
+          <li class="gallery-item" onclick="openGalleryFullscreen(0)"><button class="glass"><img
+                src="./images/image-product-1-thumbnail.jpg" alt=""></button></li>
+          <li class="gallery-item" onclick="openGalleryFullscreen(1)"><button class="glass"><img
+                src="./images/image-product-2-thumbnail.jpg" alt=""></button></li>
+          <li class="gallery-item" onclick="openGalleryFullscreen(2)"><button class="glass"><img
+                src="./images/image-product-3-thumbnail.jpg" alt=""></button></li>
+          <li class="gallery-item" onclick="openGalleryFullscreen(3)"><button class="glass"><img
+                src="./images/image-product-4-thumbnail.jpg" alt=""></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="product-info">
+      <article>
+        <p class="brand">Sneakers Company</p>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      </article>
+      <div class="price">
+        <div>
+          <h2>$125.00</h2>
+          <div class="promotion">50%</div>
+        </div>
+        <p class="old-price">$250.00</p>
+      </div>
+      <div class="actions">
+        <input type="number" name="quantity" id="quantity" placeholder="0">
+        <button class="primary"><img src="./images/icon-cart-white.svg" alt="cart white">Add to cart</button>
+      </div>
+    </section>
+
+    <dialog class="gallery-fullscreen">
+      <div class="close-modal">
+        <button class="glass" onclick="galleryFullscreen.close()"><img src="./images/icon-close-white.svg" alt=""></button>
+      </div>
+
+      <div class="highlight" data-type="fullscreen">
+        <div class="controls">
+          <button class="round-white" onclick="previous(highlightFullscreen)"><img src="./images/icon-previous.svg" alt=""></button>
+          <button class="round-white" onclick="next(highlightFullscreen)"><img src="./images/icon-next.svg" alt=""></button>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <ul>
+          <li class="gallery-item"><button class="glass"><img src="./images/image-product-1-thumbnail.jpg"
+                alt=""></button></li>
+          <li class="gallery-item"><button class="glass"><img src="./images/image-product-2-thumbnail.jpg"
+                alt=""></button></li>
+          <li class="gallery-item"><button class="glass"><img src="./images/image-product-3-thumbnail.jpg"
+                alt=""></button></li>
+          <li class="gallery-item"><button class="glass"><img src="./images/image-product-4-thumbnail.jpg"
+                alt=""></button></li>
+        </ul>
+      </div>
+    </dialog>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Moisés Silva de Azevedo</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
