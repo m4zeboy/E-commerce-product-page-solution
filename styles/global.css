@@ -31,6 +31,20 @@ body {
 .glass {
   background: none;
   border: none;
+  position: relative;
+}
+
+.glass .counter {
+  position: absolute;
+  top: -1rem;
+  right: -.5rem;
+  padding: .2rem .6rem;
+  background-color: var(--orange);
+  font-size: 1.1rem;
+  z-index: 0;
+  font-weight: bold;
+  color: white;
+  border-radius: 1rem;
 }
 
 .primary {

@@ -34,10 +34,6 @@
     flex-direction: column;
     gap: 2rem;
   }
-  /* dialog.gallery-fullscreen, dialog.gallery-fullscreen[open] {
-    display: none;
-    z-index: -1;
-  } */
 }
 /* DESKTOP */
 @media(min-width: 1200px) {

@@ -69,29 +69,27 @@
       </nav>
     </div>
     <div>
-      <button class="glass" onclick="cart.classList.toggle('open')"><img src="./images/icon-cart.svg"
-          alt="cart"></button>
+      <button class="glass" onclick="cartElement.classList.toggle('open')"><img src="./images/icon-cart.svg"
+          alt="cart"><div class="counter"></div></button>
       <button class="glass"><img src="./images/image-avatar.png" alt="" width="48"></button>
     </div>
   </header>
+
   <div class="container" id="cart-container">
     <div id="cart">
       <header class="cart-header">
         <h3>Cart</h3>
       </header>
-      <article class="cart-article">
-        <img src="./images/image-product-1-thumbnail.jpg" alt="product 1" width="50" height="50">
-        <p>
-          <span>Fall Limited Edition Sneakers</span>
-          <span>$125.00 x3 <strong>$375.00</strong></span>
-        </p>
-        <button class="glass"><img src="./images/icon-delete.svg" alt="delete"></button>
-      </article>
+      <div class="cart-main">
+        
+      </div>
+
       <footer class="cart-footer">
         <button class="primary">Checkout</button>
       </footer>
     </div>
   </div>
+
   <main class="container">
     <section class="product-preview">
       <div class="highlight" data-type="default">
@@ -130,33 +128,41 @@
         <p class="old-price">$250.00</p>
       </div>
       <div class="actions">
-        <input type="number" name="quantity" id="quantity" placeholder="0">
-        <button class="primary"><img src="./images/icon-cart-white.svg" alt="cart white">Add to cart</button>
+        <input type="number" name="quantity" id="quantity" placeholder="0" min="0">
+        <button class="primary" onclick="addToCart(0)"><img src="./images/icon-cart-white.svg" alt="cart white">Add to
+          cart</button>
       </div>
     </section>
 
     <dialog class="gallery-fullscreen">
       <div class="close-modal">
-        <button class="glass" onclick="galleryFullscreen.close()"><img src="./images/icon-close-white.svg" alt=""></button>
+        <button class="glass" onclick="galleryFullscreen.close()"><img src="./images/icon-close-white.svg"
+            alt=""></button>
       </div>
 
       <div class="highlight" data-type="fullscreen">
         <div class="controls">
-          <button class="round-white" onclick="previous(highlightFullscreen)"><img src="./images/icon-previous.svg" alt=""></button>
-          <button class="round-white" onclick="next(highlightFullscreen)"><img src="./images/icon-next.svg" alt=""></button>
+          <button class="round-white" onclick="previous(highlightFullscreen)"><img src="./images/icon-previous.svg"
+              alt=""></button>
+          <button class="round-white" onclick="next(highlightFullscreen)"><img src="./images/icon-next.svg"
+              alt=""></button>
         </div>
       </div>
 
       <div class="gallery">
         <ul>
-          <li class="gallery-item"><button class="glass"><img src="./images/image-product-1-thumbnail.jpg"
-                alt=""></button></li>
-          <li class="gallery-item"><button class="glass"><img src="./images/image-product-2-thumbnail.jpg"
-                alt=""></button></li>
-          <li class="gallery-item"><button class="glass"><img src="./images/image-product-3-thumbnail.jpg"
-                alt=""></button></li>
-          <li class="gallery-item"><button class="glass"><img src="./images/image-product-4-thumbnail.jpg"
-                alt=""></button></li>
+          <li class="gallery-item">
+            <button class="glass" onclick="select(0)"><img src="./images/image-product-1-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="gallery-item">
+            <button class="glass" onclick="select(1)"><img src="./images/image-product-2-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="gallery-item">
+            <button class="glass" onclick="select(2)"><img src="./images/image-product-3-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="gallery-item">
+            <button class="glass" onclick="select(3)"><img src="./images/image-product-4-thumbnail.jpg" alt=""></button>
+          </li>
         </ul>
       </div>
     </dialog>
